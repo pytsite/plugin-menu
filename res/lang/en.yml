@@ -1,0 +1,11 @@
+menu: 'Menu'
+icon: 'Icon'
+
+odm_ui_browser_title_menu: 'Menus'
+odm_ui_form_title_create_menu: 'New menu item'
+odm_ui_form_title_modify_menu: 'Modify menu item'
+odm_ui_form_title_delete_menu: 'Delete menu item'
+
+odm_auth_create_menu: 'Create menus'
+odm_auth_modify_menu: 'Modify menus'
+odm_auth_delete_menu: 'Delete menus'

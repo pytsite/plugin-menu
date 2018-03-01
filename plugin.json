@@ -1,0 +1,21 @@
+{
+  "name": "menu",
+  "version": "0.1",
+  "description": {
+    "en": "Menu",
+    "ru": "Меню",
+    "uk": "Меню"
+  },
+  "url": "https://github.com/pytsite/plugin-menu",
+  "author": {
+    "name": "Alexander Shepetko",
+    "email": "a@shepetko.com",
+    "url": "https://shepetko.com"
+  },
+  "requires": {
+    "plugins": [
+      "taxonomy>=2.6.1",
+      "widget>=1.3"
+    ]
+  }
+}
