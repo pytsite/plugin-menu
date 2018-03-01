@@ -8,10 +8,11 @@ from plugins import taxonomy as _taxonomy, odm as _odm
 from . import _model
 
 
-def create(title: str, alias: str = None, icon: str = None, order: int = None, language: str = None) -> _model.Menu:
+def create(title: str, alias: str = None, icon: str = None, order: int = None, language: str = None,
+           parent: _model.Menu = None) -> _model.Menu:
     """Create a new menu
     """
-    menu = _taxonomy.create('menu', title, alias, language)  # type: _model.Menu
+    menu = _taxonomy.create('menu', title, alias, language, parent)  # type: _model.Menu
     menu.order = order
     menu.icon = icon
 
@@ -27,4 +28,4 @@ def find(language: str = None) -> _odm.Finder:
 def get(alias: str, language: str = None):
     """Get a menu
     """
-    return _taxonomy.find_by_alias('menu', alias, language)
+    return _taxonomy.get('menu', alias, language)

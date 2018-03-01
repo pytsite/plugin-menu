@@ -1,6 +1,6 @@
 {
   "name": "menu",
-  "version": "0.1",
+  "version": "0.2",
   "description": {
     "en": "Menu",
     "ru": "Меню",
@@ -14,7 +14,7 @@
   },
   "requires": {
     "plugins": [
-      "taxonomy>=2.6.1",
+      "taxonomy>=2.9",
       "widget>=1.3"
     ]
   }
