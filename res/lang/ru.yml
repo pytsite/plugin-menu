@@ -1,5 +1,8 @@
 menu: 'Меню'
+enabled: 'Включено'
 icon: 'Иконка'
+word_yes: 'Да'
+word_no: 'Нет'
 
 odm_ui_browser_title_menu: 'Меню'
 odm_ui_form_title_create_menu: 'Новое меню'

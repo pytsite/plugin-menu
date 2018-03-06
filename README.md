@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 0.3 (2018-03-06)
+
+`Menu.enabled` field added.
+
+
 ### 0.2 (2018-03-01)
 
 Support for `taxonomy-2.9`.

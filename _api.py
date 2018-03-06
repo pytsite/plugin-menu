@@ -10,7 +10,7 @@ from . import _model
 
 def create(title: str, alias: str = None, icon: str = None, order: int = None, language: str = None,
            parent: _model.Menu = None) -> _model.Menu:
-    """Create a new menu
+    """Create a new menu item
     """
     menu = _taxonomy.create('menu', title, alias, language, parent)  # type: _model.Menu
     menu.order = order
@@ -20,12 +20,12 @@ def create(title: str, alias: str = None, icon: str = None, order: int = None, l
 
 
 def find(language: str = None) -> _odm.Finder:
-    """Get a menu finder
+    """Get a menu items finder
     """
     return _taxonomy.find('menu', language)
 
 
 def get(alias: str, language: str = None):
-    """Get a menu
+    """Get a menu item
     """
     return _taxonomy.get('menu', alias, language)
