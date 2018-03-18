@@ -4,6 +4,12 @@
 ## Changelog
 
 
+### 1.0 (2018-03-18)
+
+- `create()` replaced with `dispense()`.
+- Support for `taxonomy-3.0`.
+
+
 ### 0.3 (2018-03-06)
 
 `Menu.enabled` field added.

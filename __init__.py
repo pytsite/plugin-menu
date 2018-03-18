@@ -5,7 +5,7 @@ __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
 # Public API
-from ._api import create, find, get
+from ._api import dispense, find, get
 from ._model import Menu
 
 

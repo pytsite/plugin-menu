@@ -8,11 +8,11 @@ from plugins import taxonomy as _taxonomy, odm as _odm
 from . import _model
 
 
-def create(title: str, alias: str = None, icon: str = None, order: int = None, language: str = None,
-           parent: _model.Menu = None) -> _model.Menu:
-    """Create a new menu item
+def dispense(title: str, alias: str = None, icon: str = None, order: int = None, language: str = None,
+             parent: _model.Menu = None) -> _model.Menu:
+    """Dispense a new menu item or raise exception if term with specified alias already exists
     """
-    menu = _taxonomy.create('menu', title, alias, language, parent)  # type: _model.Menu
+    menu = _taxonomy.dispense('menu', title, alias, language, parent)  # type: _model.Menu
     menu.order = order
     menu.icon = icon
 
