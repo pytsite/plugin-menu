@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.0.2 (2018-08-28)
+
+Fixed widgets order.
+
+
 ### 1.0.1 (2018-05-01)
 
 `plugin.json` fixed.

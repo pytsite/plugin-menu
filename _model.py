@@ -68,7 +68,7 @@ class Menu(_taxonomy.Term):
         if self.has_field('icon'):
             frm.add_widget(_widget.input.Text(
                 uid='icon',
-                weight=25,
+                weight=250,
                 label=self.t('icon'),
                 value=self.icon,
             ))
