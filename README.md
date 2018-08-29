@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 1.1 (2018-08-29)
+
+Support of `taxonomy-4.0`.
+
+
 ### 1.0.2 (2018-08-28)
 
 Fixed widgets order.

@@ -1,6 +1,6 @@
 """PytSite Menu Plugin API Functions
 """
-__author__ = 'Alexander Shepetko'
+__author__ = 'Oleksandr Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
@@ -28,4 +28,4 @@ def find(language: str = None) -> _odm.Finder:
 def get(alias: str, language: str = None):
     """Get a menu item
     """
-    return _taxonomy.get('menu', alias, language)
+    return _taxonomy.get('menu', alias=alias, language=language, exceptions=True)
