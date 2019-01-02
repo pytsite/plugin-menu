@@ -1,10 +1,12 @@
 menu: 'Menu'
 enabled: 'Enabled'
+new_window: 'Open in new window'
+path: 'Path'
 icon: 'Icon'
 word_yes: 'Yes'
 word_no: 'No'
 
-odm_ui_browser_title_menu: 'Menus'
+odm_ui_browser_title_menu: 'Menu'
 odm_ui_form_title_create_menu: 'New menu item'
 odm_ui_form_title_modify_menu: 'Modify menu item'
 odm_ui_form_title_delete_menu: 'Delete menu item'

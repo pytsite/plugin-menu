@@ -1,5 +1,7 @@
 menu: 'Меню'
 enabled: 'Увімкнено'
+new_window: 'Відкривати у новому вікні'
+path: 'Шлях'
 icon: 'Іконка'
 word_yes: 'Так'
 word_no: 'Ні'

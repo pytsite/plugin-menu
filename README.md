@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 2.0 (2019-01-02)
+
+Totally reworked.
+
+
 ### 1.1 (2018-08-29)
 
 Support of `taxonomy-4.0`.

@@ -4,28 +4,47 @@ __author__ = 'Oleksandr Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
+from typing import Union as _Union
+from pytsite import util as _util
 from plugins import taxonomy as _taxonomy, odm as _odm
 from . import _model
 
 
-def dispense(title: str, alias: str = None, icon: str = None, order: int = None, language: str = None,
-             parent: _model.Menu = None) -> _model.Menu:
+def register_model(model: str, cls, admin_menu_title: str = None, admin_menu_weight: int = 0,
+                   admin_menu_icon: str = 'fa fas fa-bars', admin_menu_sid: str = 'menu',
+                   admin_menu_roles: _Union[str, list, tuple] = ('admin', 'dev'),
+                   admin_menu_permissions: _Union[str, list, tuple] = None):
+    """Register a menu ODM model
+    """
+    if isinstance(cls, str):
+        cls = _util.get_module_attr(cls)
+
+    if not issubclass(cls, _model.Menu):
+        raise TypeError('Subclass of {} expected'.format(_model.Menu))
+
+    _taxonomy.register_model(model, cls, admin_menu_title, admin_menu_weight, admin_menu_icon, admin_menu_sid,
+                             admin_menu_roles, admin_menu_permissions)
+
+
+def dispense(title: str, alias: str = None, icon: str = None, order: int = None, enabled: bool = True,
+             language: str = None, parent: _model.Menu = None, model: str = 'menu') -> _model.Menu:
     """Dispense a new menu item or raise exception if term with specified alias already exists
     """
-    menu = _taxonomy.dispense('menu', title, alias, language, parent)  # type: _model.Menu
-    menu.order = order
-    menu.icon = icon
+    entity = _taxonomy.dispense(model, title, alias, language, parent)  # type: _model.Menu
+    entity.enabled = enabled
+    entity.order = order
+    entity.icon = icon
 
-    return menu
+    return entity
 
 
-def find(language: str = None) -> _odm.Finder:
+def find(language: str = None, model: str = 'menu') -> _odm.Finder:
     """Get a menu items finder
     """
-    return _taxonomy.find('menu', language)
+    return _taxonomy.find(model, language)
 
 
-def get(alias: str, language: str = None):
+def get(alias: str, language: str = None, model: str = 'menu'):
     """Get a menu item
     """
-    return _taxonomy.get('menu', alias=alias, language=language, exceptions=True)
+    return _taxonomy.get(model, alias=alias, language=language, exceptions=True)
