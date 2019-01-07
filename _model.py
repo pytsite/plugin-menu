@@ -104,14 +104,13 @@ class Menu(_taxonomy.Term):
                 weight=210,
                 label=self.t('path'),
                 required=self.get_field('path').required,
-                max_length=self.get_field('path').max_length,
                 value=self.path,
             ))
 
         if self.has_field('icon'):
             frm.add_widget(_widget.input.Text(
                 uid='icon',
-                weight=400,
+                weight=310,
                 label=self.t('icon'),
                 required=self.get_field('icon').required,
                 value=self.icon,

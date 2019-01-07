@@ -4,6 +4,12 @@
 ## Changelog
 
 
+### 2.1 (2019-01-07)
+
+- New API function `register_model()`.
+- Support of `odm-5.7`.
+
+
 ### 2.0 (2019-01-02)
 
 Totally reworked.

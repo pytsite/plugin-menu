@@ -6,7 +6,7 @@ __license__ = 'MIT'
 
 # Public API
 from . import _renderer as renderer, _widget as widget
-from ._api import dispense, find, get
+from ._api import register_model, dispense, find, get
 from ._model import Menu
 
 
