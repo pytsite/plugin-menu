@@ -57,8 +57,7 @@ class Menu(_taxonomy.Term):
     def odm_ui_browser_widget_class(cls):
         return _widget.misc.TreeTable
 
-    @classmethod
-    def odm_ui_browser_setup(cls, browser: _odm_ui.Browser):
+    def odm_ui_browser_setup(self, browser: _odm_ui.Browser):
         super().odm_ui_browser_setup(browser)
 
         browser.insert_data_field('path', 'menu@path')
