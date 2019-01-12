@@ -38,7 +38,7 @@ def dispense(title: str, alias: str = None, icon: str = None, order: int = None,
     return entity
 
 
-def find(language: str = None, model: str = 'menu') -> _odm.SingleModelFinder:
+def find(model: str, language: str = None) -> _odm.SingleModelFinder:
     """Get a menu items finder
     """
     return _taxonomy.find(model, language)
