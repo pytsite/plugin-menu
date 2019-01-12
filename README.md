@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 2.3 (2019-01-12)
+
+Support of iterable arguments in widget.
+
+
 ### 2.2.1 (2019-01-12)
 
 Twitter Bootstrap[ 4 support fixed.
