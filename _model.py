@@ -69,9 +69,9 @@ class Menu(_taxonomy.Term):
         r['path'] = self.path
 
         if self.enabled:
-            r['enabled'] = '<span class="label label-primary">{}</span>'.format(self.t('word_yes'))
+            r['enabled'] = '<span class="label label-primary badge badge-primary">{}</span>'.format(self.t('word_yes'))
         else:
-            r['enabled'] = '<span class="label label-default">{}</span>'.format(self.t('word_no'))
+            r['enabled'] = '<span class="label label-default badge badge-secondary">{}</span>'.format(self.t('word_no'))
 
         return r
 

@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 2.2.1 (2019-01-12)
+
+Twitter Bootstrap[ 4 support fixed.
+
+
 ### 2.2 (2019-01-08)
 
 Support of `odm_ui-7.x`.
