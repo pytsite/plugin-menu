@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 3.0.1 (2019-01-14)
+
+`icon` widget size and position fixed.
+
+
 ### 3.0 (2019-01-14)
 
 - `get()` API function removed.
