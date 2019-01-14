@@ -4,6 +4,12 @@
 ## Changelog
 
 
+### 3.0 (2019-01-14)
+
+- `get()` API function removed.
+- `model.Menu.alias` field removed.
+
+
 ### 2.3.1 (2019-01-12)
 
 Typo fixed.

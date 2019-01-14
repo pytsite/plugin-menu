@@ -6,8 +6,10 @@ __license__ = 'MIT'
 
 # Public API
 from . import _renderer as renderer, _widget as widget
-from ._api import register_model, dispense, find, get
+from ._api import register_model, dispense, find
 from ._model import Menu
+
+from pytsite import semver as _semver
 
 
 def plugin_load():
@@ -21,5 +23,7 @@ def plugin_load():
         _api.register_model('menu', _model.Menu, __name__ + '@menu')
 
 
-def plugin_load_wsgi():
-    pass
+def plugin_update(v_from: _semver.Version):
+    if v_from < '3.0':
+        from plugins import odm
+        odm.reindex()

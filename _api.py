@@ -26,11 +26,11 @@ def register_model(model: str, cls, admin_menu_title: str = None, admin_menu_wei
                              admin_menu_roles, admin_menu_permissions)
 
 
-def dispense(title: str, alias: str = None, icon: str = None, order: int = None, enabled: bool = True,
-             language: str = None, parent: _model.Menu = None, model: str = 'menu') -> _model.Menu:
-    """Dispense a new menu item or raise exception if term with specified alias already exists
+def dispense(title: str, icon: str = None, order: int = None, enabled: bool = True, language: str = None,
+             parent: _model.Menu = None, model: str = 'menu') -> _model.Menu:
+    """Dispense a new menu item
     """
-    entity = _taxonomy.dispense(model, title, alias, language, parent)  # type: _model.Menu
+    entity = _taxonomy.dispense(model, title, None, language, parent)  # type: _model.Menu
     entity.enabled = enabled
     entity.order = order
     entity.icon = icon
@@ -42,9 +42,3 @@ def find(model: str, language: str = None) -> _odm.SingleModelFinder:
     """Get a menu items finder
     """
     return _taxonomy.find(model, language)
-
-
-def get(alias: str, language: str = None, model: str = 'menu'):
-    """Get a menu item
-    """
-    return _taxonomy.get(model, alias=alias, language=language, exceptions=True)

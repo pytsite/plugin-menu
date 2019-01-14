@@ -14,6 +14,7 @@ class Menu(_taxonomy.Term):
     def _setup_fields(self):
         super()._setup_fields()
 
+        self.remove_field('alias')
         self.remove_field('weight')
         self.remove_field('image')
         self.define_field(_odm.field.Bool('enabled', default=True))
