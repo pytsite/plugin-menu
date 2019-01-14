@@ -4,6 +4,12 @@
 ## Changelog
 
 
+### 3.0.2 (2019-01-14)
+
+- `menu-3.0` incompatibility fixed.
+- Widget's structure fixed.
+
+
 ### 3.0.1 (2019-01-14)
 
 `icon` widget size and position fixed.

@@ -7,12 +7,12 @@ __license__ = 'MIT'
 from typing import Optional as _Optional, Union as _Union, Iterable as _Iterable
 from abc import ABC as _ABC, abstractmethod as _abstractmethod
 from pytsite import html as _html, router as _router
-from . import _api, _model
+from . import _model
 
 
 class Abstract(_ABC):
     @_abstractmethod
-    def render(self, entities: _Iterable[_Union[str, _model.Menu]]) -> _html.Element:
+    def render(self, entities: _Iterable[_model.Menu]) -> _html.Element:
         pass
 
 
@@ -63,11 +63,9 @@ class Bootstrap4(Abstract):
         # Currently Bootstrap does not support sub-dropdowns, so we too. While.
         # https://github.com/twbs/bootstrap/issues/21026
 
-        root = _html.Ul(css='navbar-nav mr-auto')
+        root = _html.TagLessElement()
 
         for e in entities:  # type: _model.Menu
-            if isinstance(e, str):
-                e = _api.get(e)
             child = self._render_dropdown(e) if e.has_children else self._render_item(e)
             if child:
                 root.append(child)
