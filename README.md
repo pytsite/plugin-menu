@@ -4,6 +4,11 @@
 ## Changelog
 
 
+### 3.1 (2019-03-04)
+
+Support of `odm-6.0`.
+
+
 ### 3.0.2 (2019-01-14)
 
 - `menu-3.0` incompatibility fixed.

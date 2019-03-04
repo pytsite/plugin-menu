@@ -19,7 +19,7 @@ class Menu(_taxonomy.Term):
         self.remove_field('image')
         self.define_field(_odm.field.Bool('enabled', default=True))
         self.define_field(_odm.field.Bool('new_window'))
-        self.define_field(_odm.field.String('path', required=True, max_length=512, default='#'))
+        self.define_field(_odm.field.String('path', is_required=True, max_length=512, default='#'))
         self.define_field(_odm.field.String('icon'))
 
     @property
@@ -103,7 +103,7 @@ class Menu(_taxonomy.Term):
                 uid='path',
                 weight=210,
                 label=self.t('path'),
-                required=self.get_field('path').required,
+                required=self.get_field('path').is_required,
                 value=self.path,
             ))
 
@@ -112,7 +112,7 @@ class Menu(_taxonomy.Term):
                 uid='icon',
                 weight=220,
                 label=self.t('icon'),
-                required=self.get_field('icon').required,
+                required=self.get_field('icon').is_required,
                 h_size='col-12 col-xs-12 col-sm-3 col-md-2 col-lg-1',
                 value=self.icon,
             ))
