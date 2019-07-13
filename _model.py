@@ -4,10 +4,10 @@ __author__ = 'Oleksandr Shepetko'
 __email__ = 'a@shepetko.com'
 __license__ = 'MIT'
 
-from plugins import taxonomy as _taxonomy, odm as _odm, widget as _widget, form as _form, odm_ui as _odm_ui
+from plugins import taxonomy, odm, widget, form, odm_ui
 
 
-class Menu(_taxonomy.Term):
+class Menu(taxonomy.Term):
     """Menu Model
     """
 
@@ -17,10 +17,10 @@ class Menu(_taxonomy.Term):
         self.remove_field('alias')
         self.remove_field('weight')
         self.remove_field('image')
-        self.define_field(_odm.field.Bool('enabled', default=True))
-        self.define_field(_odm.field.Bool('new_window'))
-        self.define_field(_odm.field.String('path', is_required=True, max_length=512, default='#'))
-        self.define_field(_odm.field.String('icon'))
+        self.define_field(odm.field.Bool('enabled', default=True))
+        self.define_field(odm.field.Bool('new_window'))
+        self.define_field(odm.field.String('path', is_required=True, max_length=512, default='#'))
+        self.define_field(odm.field.String('icon'))
 
     @property
     def enabled(self) -> bool:
@@ -56,9 +56,9 @@ class Menu(_taxonomy.Term):
 
     @classmethod
     def odm_ui_browser_widget_class(cls):
-        return _widget.misc.TreeTable
+        return widget.misc.TreeTable
 
-    def odm_ui_browser_setup(self, browser: _odm_ui.Browser):
+    def odm_ui_browser_setup(self, browser: odm_ui.Browser):
         super().odm_ui_browser_setup(browser)
 
         browser.insert_data_field('path', 'menu@path')
@@ -76,14 +76,14 @@ class Menu(_taxonomy.Term):
 
         return r
 
-    def odm_ui_m_form_setup_widgets(self, frm: _form.Form):
+    def odm_ui_m_form_setup_widgets(self, frm: form.Form):
         super().odm_ui_m_form_setup_widgets(frm)
 
         if frm.has_widget('order'):
             frm.remove_widget('order')
 
         if self.has_field('enabled'):
-            frm.add_widget(_widget.select.Checkbox(
+            frm.add_widget(widget.select.Checkbox(
                 uid='enabled',
                 weight=10,
                 label=self.t('enabled'),
@@ -91,7 +91,7 @@ class Menu(_taxonomy.Term):
             ))
 
         if self.has_field('new_window'):
-            frm.add_widget(_widget.select.Checkbox(
+            frm.add_widget(widget.select.Checkbox(
                 uid='new_window',
                 weight=20,
                 label=self.t('new_window'),
@@ -99,7 +99,7 @@ class Menu(_taxonomy.Term):
             ))
 
         if self.has_field('path'):
-            frm.add_widget(_widget.input.Text(
+            frm.add_widget(widget.input.Text(
                 uid='path',
                 weight=210,
                 label=self.t('path'),
@@ -108,7 +108,7 @@ class Menu(_taxonomy.Term):
             ))
 
         if self.has_field('icon'):
-            frm.add_widget(_widget.input.Text(
+            frm.add_widget(widget.input.Text(
                 uid='icon',
                 weight=220,
                 label=self.t('icon'),

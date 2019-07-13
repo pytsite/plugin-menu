@@ -9,7 +9,8 @@ from . import _renderer as renderer, _widget as widget
 from ._api import register_model, dispense, find
 from ._model import Menu
 
-from pytsite import semver as _semver
+# Locally needed imports
+from semaver import Version as _Version
 
 
 def plugin_load():
@@ -23,7 +24,7 @@ def plugin_load():
         _api.register_model('menu', _model.Menu, __name__ + '@menu')
 
 
-def plugin_update(v_from: _semver.Version):
+def plugin_update(v_from: _Version):
     if v_from < '3.0':
         from plugins import odm
         odm.reindex()
